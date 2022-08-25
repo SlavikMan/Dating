@@ -1,0 +1,343 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  height: 100%;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* =============================================== */
+
+.wrapper {
+  background: #230e2b;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.wrapper::before {
+  content: "";
+  position: absolute;
+  background-image: url(images/left.svg);
+  width: 333px;
+  height: 720px;
+  background-repeat: no-repeat;
+  left: 0px;
+  top: 0px;
+  background-position: center;
+  background-size: cover;
+}
+
+.wrapper::after {
+  content: "";
+  position: absolute;
+  background-image: url(images/right.svg);
+  width: 433px;
+  height: 620px;
+  background-repeat: no-repeat;
+  right: 0px;
+  top: 100px;
+  background-position: center;
+  background-size: cover;
+}
+
+.login {
+  flex: 1 1 auto;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  /* max-width: 380px; */
+  align-items: center;
+  font-family: "Rubik", sans-serif;
+  /* margin-left: 37%; */
+}
+
+/* ====EMAIL======================================== */
+
+.login__email {
+  display: flex;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.margin {
+  margin-top: 50px;
+}
+
+.input {
+  width: 380px;
+  height: 70px;
+  background: #42204e;
+  padding: 23px 70px;
+  text-decoration: none;
+  border-radius: 500px;
+  border: none;
+  color: white;
+}
+
+input::placeholder {
+  color: #8b5d9a;
+}
+
+.input__icon::before {
+  content: "";
+  position: absolute;
+  background-image: url(images/letter.svg);
+  width: 20px;
+  height: 13.7px;
+  background-repeat: no-repeat;
+  left: 25px;
+  top: 28px;
+}
+
+/* ========ENTER-BUTTON====================================== */
+
+.login__button {
+  width: 380px;
+  height: 70px;
+  background: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
+  box-shadow: 0px 20px 30px rgba(179, 34, 31, 0.2);
+  border-radius: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Rubik";
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.login__button:hover {
+  background: linear-gradient(90deg, #ffc700 0%, #ff005c 100%);
+}
+
+/* =====SEX================================ */
+
+.login__button-sex {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+.login__button-sex--male {
+  background: linear-gradient(#230e2b, #230e2b) padding-box,
+    linear-gradient(90deg, #0575e6 0%, #021b79 100%) border-box;
+  border: 2px solid transparent;
+  border-radius: 500px;
+  width: 185px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.login__button-sex--male:hover {
+  background: linear-gradient(90deg, #0575e6 0%, #021b79 100%);
+}
+
+.login__button-sex--female {
+  background: linear-gradient(#230e2b, #230e2b) padding-box,
+    linear-gradient(90deg, #ec008c 0%, #fc6767 100%) border-box;
+  border: 2px solid transparent;
+  width: 185px;
+  height: 70px;
+  border-radius: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__button-sex--female:hover {
+  background: linear-gradient(90deg, #ec008c 0%, #fc6767 100%);
+}
+
+.male {
+  width: 36px;
+  height: 36px;
+}
+
+.female {
+  width: 36px;
+  height: 36px;
+}
+
+/* =========MAIN======================================== */
+
+.main__info {
+  max-width: 846px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+}
+.main__info-head {
+  position: relative;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 150%;
+  text-align: center;
+  color: #ffffff;
+}
+.main__info-text {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.iDontRemember {
+  margin-top: 20px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+}
+.iDontRemember a {
+  text-decoration: none;
+  color: #925fa4;
+}
+
+.lock__icon::before {
+  content: "";
+  position: absolute;
+  background-image: url(images/lock2.svg);
+  width: 17.5px;
+  height: 20px;
+  background-repeat: no-repeat;
+  left: 25px;
+  top: 28px;
+}
+
+.eye__icon::before {
+  content: "";
+  position: absolute;
+  background-image: url(images/eye.svg);
+  width: 20px;
+  height: 10.55px;
+  background-repeat: no-repeat;
+  right: 25px;
+  top: 31px;
+}
+
+/* ====FOOTER============================= */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 270px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #eeeeee;
+}
+footer a {
+  color: #eeeeee;
+  text-decoration: none;
+}
+ul li {
+  display: inline; /* Отображать как строчный элемент */
+}
+.left__list {
+}
+
+.left__list li {
+  padding-right: 30px;
+}
+
+.footer__list {
+}
+.footer__list-item {
+}
+.right__list {
+}
+
+.right__list li {
+  padding-right: 30px;
+}
